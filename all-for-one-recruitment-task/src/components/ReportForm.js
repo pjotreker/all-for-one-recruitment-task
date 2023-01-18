@@ -3,6 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
 
 const ReportForm = (props) => {
+
   const [report, setReport] = useState({
     temperature: props.report ? props.report.temperature : '',
     unit: props.report ? props.report.unit : '',
@@ -33,7 +34,7 @@ const ReportForm = (props) => {
       };
       props.handleOnSubmit(report);
     } else {
-      errorMsg = 'Please fill out all the fields.';
+      errorMsg = 'Please fill out all the fields!';
     }
     setErrorMsg(errorMsg);
   };
@@ -51,6 +52,22 @@ const ReportForm = (props) => {
         break;
       case 'unit':
         if (value === "C" || value === "F" || value === "K") {
+          setReport((prevState) => ({
+            ...prevState,
+            [name]: value
+          }));
+        }
+        break;
+      case 'city':
+        if (typeof(value) === "string") {
+          setReport((prevState) => ({
+            ...prevState,
+            [name]: value
+          }));
+        }
+        break;
+      case 'date':
+        if (typeof(value) === "string") {
           setReport((prevState) => ({
             ...prevState,
             [name]: value
