@@ -12,7 +12,7 @@ const ReportForm = (props) => {
   });
 
   const [errorMsg, setErrorMsg] = useState('');
-  const { temperature, city, unit, date } = report;
+  const { temperature, unit, city, date } = report;
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -21,7 +21,7 @@ const ReportForm = (props) => {
 
     const allFieldsFilled = values.every((field) => {
       const value = `${field}`.trim();
-      return value !== '' && value !== '0';
+      return value !== '';
     });
 
     if (allFieldsFilled) {
@@ -43,7 +43,7 @@ const ReportForm = (props) => {
     const { name, value } = event.target;
     switch (name) {
       case 'temperature':
-        if (typeof(value) === "number") {
+        if (typeof(value) === "string") {
           setReport((prevState) => ({
             ...prevState,
             [name]: value
@@ -67,7 +67,8 @@ const ReportForm = (props) => {
         }
         break;
       case 'date':
-        if (typeof(value) === "string") {
+        let today = new Date();
+        if (typeof(value) === "string" && (value <= today.toISOString().split('T')[0])) {
           setReport((prevState) => ({
             ...prevState,
             [name]: value
