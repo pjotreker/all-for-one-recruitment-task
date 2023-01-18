@@ -33,6 +33,7 @@ const ReportForm = (props) => {
         date,
       };
       props.handleOnSubmit(report);
+      // console.log("New report:", report);
     } else {
       errorMsg = 'Please fill out all the fields!';
     }
@@ -51,6 +52,7 @@ const ReportForm = (props) => {
         }
         break;
       case 'unit':
+        console.log("Unit:", value);
         if (value === "C" || value === "F" || value === "K") {
           setReport((prevState) => ({
             ...prevState,
@@ -112,7 +114,7 @@ const ReportForm = (props) => {
                 id={`inline-${type}-1`}
                 className="input-control"
                 name="unit"
-                value={unit}
+                value={"C"}
                 onChange={handleInputChange}
             />
             <Form.Check
@@ -122,7 +124,7 @@ const ReportForm = (props) => {
                 id={`inline-${type}-1`}
                 className="input-control"
                 name="unit"
-                value={unit}
+                value={"K"}
                 onChange={handleInputChange}
             />
             <Form.Check
@@ -132,7 +134,7 @@ const ReportForm = (props) => {
                 id={`inline-${type}-1`}
                 className="input-control"
                 name="unit"
-                value={unit}
+                value={"F"}
                 onChange={handleInputChange}
             />
             </div>
