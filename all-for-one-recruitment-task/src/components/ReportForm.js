@@ -15,7 +15,7 @@ const ReportForm = (props) => {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    const values = [temperature, city, unit, date];
+    const values = [temperature, unit, city, date];
     let errorMsg = '';
 
     const allFieldsFilled = values.every((field) => {
@@ -41,8 +41,8 @@ const ReportForm = (props) => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     switch (name) {
-      case 'quantity':
-        if (value === '' || parseInt(value) === +value) {
+      case 'temperature':
+        if (typeof(value) === "number") {
           setReport((prevState) => ({
             ...prevState,
             [name]: value
@@ -50,7 +50,7 @@ const ReportForm = (props) => {
         }
         break;
       case 'unit':
-        if (value === '' || value.match(/^\d{1,}(\.\d{0,2})?$/)) {
+        if (value === "C" || value === "F" || value === "K") {
           setReport((prevState) => ({
             ...prevState,
             [name]: value
@@ -66,7 +66,7 @@ const ReportForm = (props) => {
   };
 
   return (
-    <div className="main-form">
+    <div className="main-report-form">
       {errorMsg && <p className="errorMsg">{errorMsg}</p>}
       <Form onSubmit={handleOnSubmit}>
         <Form.Group controlId="temperature">
