@@ -5,14 +5,12 @@ import ReportsList from './ReportsList';
 
 const Router = () => {
   return (
-      <div>
-        <div className="main-content">
-          <Routes>
+    <div className="main-content">
+        <Routes>
             <Route element={<ReportsList />} path="/list" exact={true} />
             <Route element={<AddReport />} path="/add" />
-          </Routes>
-        </div>
-      </div>
+        </Routes>
+    </div>
   );
 };
 

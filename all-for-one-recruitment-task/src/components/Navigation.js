@@ -5,11 +5,11 @@ const Navigation = () => {
   return (
     <div className="links">
         <NavLink to="/list" className="link" activeClassName="active">
-        Reports List
+            Reports List
         </NavLink>
         <br/>
         <NavLink to="/add" className="link" activeClassName="active">
-        Add Report
+            Add Report
         </NavLink>
     </div>
   )

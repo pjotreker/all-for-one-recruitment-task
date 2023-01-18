@@ -1,5 +1,5 @@
 import React from 'react';
-// import ReportForm from './ReportForm';
+import ReportForm from './ReportForm';
 
 const AddReport = () => {
   const handleOnSubmit = (report) => {
@@ -7,12 +7,9 @@ const AddReport = () => {
   };
 
   return (
-    <div>
-        {"Hello world!!!"}
-    </div>
-    // <React.Fragment>
-    //   <ReportForm handleOnSubmit={handleOnSubmit} />
-    // </React.Fragment>
+    <React.Fragment>
+      <ReportForm handleOnSubmit={handleOnSubmit} />
+    </React.Fragment>
   );
 };
 
