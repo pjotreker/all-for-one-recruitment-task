@@ -1,4 +1,4 @@
-# Getting Started with All For On recruitment task
+# Getting Started with All For One recruitment task
 
 This project was created and developed by Piotr Rychlicki.
 Below you can find instructions to run live demo of application. 
