@@ -1,10 +1,11 @@
-# Getting Started with Create React App
+# Getting Started with All For On recruitment task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created and developed by Piotr Rychlicki.
+Below you can find instructions to run live demo of application. 
 
-## Available Scripts
+## Instructions
 
-In the project directory, you can run:
+In the project directory, you can run in your terminal below commands:
 
 ### `npm start`
 
