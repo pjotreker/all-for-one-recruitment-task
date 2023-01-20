@@ -10,7 +10,7 @@ const Router = () => {
   return (
     <div className="main-content">
         <Routes>
-            <Route element={<ReportsList />} path="/list" />
+            <Route element={<ReportsList reports={reports} />} path="/list" />
             <Route element={<AddReport reports={reports} setReports={setReports}/>} path="/add" />
         </Routes>
     </div>
