@@ -4,11 +4,13 @@ import { v4 as uuidv4 } from 'uuid';
 
 const ReportForm = (props) => {
 
-  const [report, setReport] = useState({
-    temperature: props.report ? props.report.temperature : '',
-    unit: props.report ? props.report.unit : '',
-    city: props.report ? props.report.city : '',
-    date: props.report ? props.report.date : ''
+  const [report, setReport] = useState(() => {
+    return {
+      temperature: props.report ? props.report.temperature : '',
+      unit: props.report ? props.report.unit : '',
+      city: props.report ? props.report.city : '',
+      date: props.report ? props.report.date : ''
+    };
   });
 
   const [errorMsg, setErrorMsg] = useState('');
@@ -108,34 +110,31 @@ const ReportForm = (props) => {
           {['radio'].map((type) => (
             <div key={`inline-${type}`} className="mb-3">
             <Form.Check
-                inline
-                label="C"
-                type={type}
-                id={`inline-${type}-1`}
                 className="input-control"
+                type={type}
                 name="unit"
                 value={"C"}
                 onChange={handleInputChange}
+                inline
+                label="C"
             />
             <Form.Check
-                inline
-                label="K"
-                type={type}
-                id={`inline-${type}-1`}
                 className="input-control"
+                type={type}
                 name="unit"
                 value={"K"}
                 onChange={handleInputChange}
+                inline
+                label="K"
             />
             <Form.Check
-                inline
-                label="F"
-                type={type}
-                id={`inline-${type}-1`}
                 className="input-control"
+                type={type}
                 name="unit"
                 value={"F"}
                 onChange={handleInputChange}
+                inline
+                label="F"
             />
             </div>
           ))}
