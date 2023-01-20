@@ -5,7 +5,7 @@ Below you can find instructions to run live demo of application.
 
 ## Instructions
 
-In the project directory, you can run in your terminal below commands:
+In the project directory, you can run undermentioned commands in your terminal:
 
 ### `npm start`
 
