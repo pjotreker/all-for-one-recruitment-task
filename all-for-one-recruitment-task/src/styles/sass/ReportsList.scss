@@ -1,0 +1,18 @@
+@import "mixins";
+@import "variables"; 
+
+#reports-list-table {
+    width: 100%;
+}
+
+#reports-list-thead-tr {
+    background-color: $table-head-background-color;
+}
+
+#reports-list-tbody {
+    background-color: $table-body-background-color;
+}
+
+.report-tbody-td {
+    padding: 5px;
+}

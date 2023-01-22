@@ -1,0 +1,27 @@
+@import "variables";
+
+@mixin form-group {
+    font-size: $text-size-normal;
+    overflow: hidden;
+    text-overflow: clip;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin button {
+    background-color: $base-button-background-color;
+    border: 0px;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 100px;
+    height: 100%;
+    max-height: 30px;
+
+    &:hover {
+        background-color: $base-button-background-hover-color;
+    }
+}

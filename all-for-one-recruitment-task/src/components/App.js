@@ -1,4 +1,4 @@
-import './App.css';
+import '../styles/sass/App.scss';
 import Router from './Router';
 import Header from './Header';
 import Navigation from './Navigation';

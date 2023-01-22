@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
+import '../styles/sass/ReportForm.scss';
 
 const ReportForm = (props) => {
 
@@ -91,11 +92,10 @@ const ReportForm = (props) => {
     <div className="main-report-form">
       {errorMsg && <p className="errorMsg">{errorMsg}</p>}
       <Form onSubmit={handleOnSubmit}>
-        <Form.Group controlId="temperature">
-          <Form.Label>Temperature</Form.Label>
-          <br/>
+        <Form.Group className="report-form-group" controlId="temperature">
+          <Form.Label className="horizontal-element-of-form">Temperature</Form.Label>
           <Form.Control
-            className="input-control"
+            className="input-control horizontal-element-of-form"
             type="number"
             name="temperature"
             value={temperature}
@@ -104,13 +104,12 @@ const ReportForm = (props) => {
           />
         </Form.Group>
         <br/>
-        <Form.Group controlId="unit">
-          <Form.Label>Unit</Form.Label>
-          <br/>
+        <Form.Group className="report-form-group" controlId="unit">
+          <Form.Label className="horizontal-element-of-form">Unit</Form.Label>
           {['radio'].map((type) => (
-            <div key={`inline-${type}`} className="mb-3">
+            <div key={`inline-${type}`} className="form-group-radio">
             <Form.Check
-                className="input-control"
+                className="radio-input-control horizontal-element-of-form"
                 type={type}
                 name="unit"
                 value={"C"}
@@ -119,7 +118,7 @@ const ReportForm = (props) => {
                 label="C"
             />
             <Form.Check
-                className="input-control"
+                className="radio-input-control horizontal-element-of-form"
                 type={type}
                 name="unit"
                 value={"K"}
@@ -128,7 +127,7 @@ const ReportForm = (props) => {
                 label="K"
             />
             <Form.Check
-                className="input-control"
+                className="radio-input-control horizontal-element-of-form"
                 type={type}
                 name="unit"
                 value={"F"}
@@ -140,11 +139,10 @@ const ReportForm = (props) => {
           ))}
         </Form.Group>
         <br/>
-        <Form.Group controlId="city">
-          <Form.Label>City</Form.Label>
-          <br/>
+        <Form.Group className="report-form-group" controlId="city">
+          <Form.Label className="horizontal-element-of-form">City</Form.Label>
           <Form.Control
-            className="input-control"
+            className="input-control horizontal-element-of-form"
             type="text"
             name="city"
             value={city}
@@ -153,11 +151,10 @@ const ReportForm = (props) => {
           />
         </Form.Group>
         <br/>
-        <Form.Group controlId="date">
-          <Form.Label>Date</Form.Label>
-          <br/>
+        <Form.Group className="report-form-group" controlId="date">
+          <Form.Label className="horizontal-element-of-form">Date</Form.Label>
           <Form.Control
-            className="input-control"
+            className="input-control horizontal-element-of-form"
             type="date"
             name="date"
             value={date}

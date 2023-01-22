@@ -1,5 +1,6 @@
 import React from 'react';
 import Report from './Report';
+import '../styles/sass/ReportsList.scss';
 
 const ReportsList = ({ reports }) => {
   const _ = require('lodash'); 
@@ -7,9 +8,9 @@ const ReportsList = ({ reports }) => {
   return (
     <div>
       <h2>List of reports</h2>
-      <table>
+      <table id="reports-list-table">
         <thead>
-          <tr>
+          <tr id="reports-list-thead-tr">
             <th>Date</th>
             <th>Temperature</th>
             <th>Unit</th>
@@ -17,7 +18,7 @@ const ReportsList = ({ reports }) => {
             <th></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="reports-list-tbody">
             {!_.isEmpty(reports) ? (
               reports.map((report) => (
                 <Report key={report.id} {...report} />

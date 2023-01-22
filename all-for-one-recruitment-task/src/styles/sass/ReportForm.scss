@@ -1,0 +1,23 @@
+@import "mixins";
+@import "variables";
+
+.report-form-group {
+    @include form-group;
+}
+
+.form-group-radio {
+    display: flex;
+    flex-direction: row;
+}
+
+.input-control {
+    border: 0px;
+    border-radius: 4px;
+    height: 24px;
+    width: 200px;
+    background-color: $input-field-background-color;
+}
+
+.horizontal-element-of-form {
+    margin: 5px;
+}

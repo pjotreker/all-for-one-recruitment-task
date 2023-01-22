@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
+import '../styles/sass/ReportsList.scss';
 
 const Report = ({
   id,
@@ -20,13 +21,13 @@ const Report = ({
     
   return (
     <tr>
-        <td>{new Date(date).toDateString()}</td>
-        <td>{temperature + " K"}</td>
-        <td>{unit}</td>
-        <td>{city}</td>
-        <td>
+        <td className="report-tbody-td">{new Date(date).toDateString()}</td>
+        <td className="report-tbody-td">{temperature + " K"}</td>
+        <td className="report-tbody-td">{unit}</td>
+        <td className="report-tbody-td">{city}</td>
+        <td className="report-tbody-td">
             <Button variant="primary" onClick={() => navigate(`/edit/${id}`)}>
-                Edit
+                EDIT
             </Button>{' '}
         </td>
     </tr>
